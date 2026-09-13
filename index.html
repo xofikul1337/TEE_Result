@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8f0718" />
+    <meta
+      name="description"
+      content="টেকনিক ইজি এডুকেশন এসএসসি-২০২৬ কৃতি শিক্ষার্থী সংবর্ধনা ফলাফল"
+    />
+    <title>SSC 2026 Result | Technic Easy Education</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+    <main class="page-shell">
+      <section class="result-card" aria-labelledby="page-title">
+        <div class="brand" aria-label="Technique Easy Education">
+          <div class="brand-mark">
+            <img src="./tee-logo.png" alt="Technique Easy Education logo" />
+          </div>
+          <p class="brand-name">Technique Easy Education</p>
+        </div>
+
+        <div class="hero-copy">
+          <span class="eyebrow">এসএসসি ২০২৬</span>
+          <h1 id="page-title">জিপিএ-৫ সংবর্ধনা</h1>
+          <p>নির্বাচিত শিক্ষার্থীদের তালিকা</p>
+        </div>
+
+        <form id="result-form" class="search-form" novalidate>
+          <label for="roll">এসএসসি রোল নম্বর বা রেজিস্ট্রেশন আইডি</label>
+          <div class="input-wrap">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 4h6M9 11h6M9 15h4" />
+            </svg>
+            <input
+              id="roll"
+              name="roll"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              maxlength="20"
+              placeholder="যেমন 140312 বা TEE26-0001"
+              aria-describedby="input-hint form-message"
+              required
+            />
+          </div>
+          <p id="input-hint" class="input-hint">রেজিস্ট্রেশনের সময় যে রোল নম্বর দিয়েছিলেন, সেটিই লিখুন।</p>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+          <button id="submit-button" type="submit">
+            <span class="button-label">দেখুন</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <section id="result-panel" class="result-panel" aria-live="polite" hidden>
+          <div id="status-icon" class="status-icon" aria-hidden="true"></div>
+          <p id="status-kicker" class="status-kicker"></p>
+          <h2 id="status-title"></h2>
+          <p id="status-message"></p>
+          <button id="search-again" class="text-button" type="button">অন্য রোল খুঁজুন</button>
+        </section>
+
+        <footer>
+          <p>সহায়তা প্রয়োজন? Technic Easy Education-এর অফিসিয়াল পেজে যোগাযোগ করুন।</p>
+          <div class="credits">
+            <span>Developed By : <a href="https://xofikul.is-a.dev/" target="_blank" rel="noopener noreferrer">Shofikul Islam Billu</a></span>
+            <span>UX : Showrob Hossain Rabbi</span>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

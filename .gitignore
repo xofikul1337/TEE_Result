@@ -1,0 +1,5 @@
+# Generated/import data must never be published with the website or committed.
+/public-results.json
+/tableConvert*.json
+/google-services*.json
+

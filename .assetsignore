@@ -1,0 +1,10 @@
+.git/
+.gitignore
+.assetsignore
+README.md
+database.rules.json
+firebase.json
+public-results.json
+scripts/
+tests/
+wrangler.jsonc

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8f0718" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Excel to Firebase JSON Converter</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./converter.css" />
+  </head>
+  <body>
+    <main class="converter-shell">
+      <section class="converter-card">
+        <header class="converter-header">
+          <img src="./tee-logo.png" alt="Technique Easy Education logo" />
+          <div>
+            <p>Technique Easy Education</p>
+            <h1>Excel থেকে Firebase JSON</h1>
+          </div>
+        </header>
+
+        <div class="privacy-note">
+          <span aria-hidden="true">🔒</span>
+          <p><strong>আপনার data private থাকবে।</strong> সম্পূর্ণ conversion এই browser-এর ভেতরেই হবে—কোনো file server-এ upload হবে না।</p>
+        </div>
+
+        <label id="drop-zone" class="drop-zone" for="excel-file">
+          <input id="excel-file" type="file" accept=".xlsx,.xls,.xlsb,.csv" />
+          <span class="upload-icon" aria-hidden="true">↑</span>
+          <strong id="file-title">Excel বা CSV file নির্বাচন করুন</strong>
+          <span id="file-subtitle">এখানে drop করুন অথবা click করে browse করুন</span>
+          <small>XLSX, XLS, XLSB অথবা CSV · সর্বোচ্চ 25 MB</small>
+        </label>
+
+        <div id="sheet-control" class="sheet-control" hidden>
+          <label for="sheet-select">কোন sheet থেকে data নেবেন?</label>
+          <select id="sheet-select"></select>
+        </div>
+
+        <section class="required-columns" aria-labelledby="columns-title">
+          <h2 id="columns-title">Excel-এর প্রয়োজনীয় column</h2>
+          <div class="column-list">
+            <code>SSC Roll</code>
+            <code>Unique ID</code>
+            <code>Student Name</code>
+            <code>Status</code>
+          </div>
+          <p>Column name ও spelling ঠিক এভাবেই থাকতে হবে। Roll অথবা Unique ID—অন্তত একটি থাকতে হবে।</p>
+        </section>
+
+        <p id="converter-message" class="converter-message" role="alert" aria-live="polite"></p>
+        <button id="convert-button" class="convert-button" type="button" disabled>
+          <span>Convert &amp; Download JSON</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+
+        <section id="summary" class="summary" aria-live="polite" hidden>
+          <div><strong id="valid-rows">0</strong><span>Valid rows</span></div>
+          <div><strong id="lookup-keys">0</strong><span>Lookup keys</span></div>
+          <div><strong id="selected-rows">0</strong><span>Selected</span></div>
+        </section>
+
+        <section id="error-panel" class="error-panel" hidden>
+          <h2>এই সমস্যাগুলো ঠিক করুন</h2>
+          <ul id="error-list"></ul>
+        </section>
+
+        <footer>Output file-টি Firebase Realtime Database-এর <code>/publicResults</code> node-এ import করবেন।</footer>
+      </section>
+    </main>
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="./converter.js" defer></script>
+  </body>
+</html>
